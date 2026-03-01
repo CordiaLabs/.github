@@ -1,18 +1,23 @@
 # Cordia Labs
 
-Cordia Labs develops infrastructure for durable, agentic workflows. We focus on solving state management challenges at the intersection of autonomous execution and human oversight.
+Building infrastructure for durable, agentic workflows. 
+We focus on state and control at the boundary between autonomous execution and human oversight.
 
 ## Focus Areas
 
-* **Durable Wait Protocols:** Primitives that allow agents to pause execution without consuming active compute or losing state.
-* **Human-in-the-Loop (HITL):** Standardized interfaces for manual payload verification and "hot-patching" of agent outputs.
-* **Safety Infrastructure:** Tool-use authorization and audit trails for high-stakes autonomous actions.
+* **Durable wait protocols:** Primitives that let agents pause execution without holding compute or losing state.
+* **Human-in-the-loop (HITL):** Standard interfaces for manual verification and hot-patching of agent outputs.
+* **Safety infrastructure:** Tool-use authorization, behavioral guardrails, and audit trails for high-stakes agent actions.
 
 ## Active Projects
 
-### [LetsPing](https://github.com/cordialabs/letsping)
-The protocol for HITL agent orchestration. Framework-agnostic SDKs for Python and Node.js that provide a secure, durable gateway for human intervention.
+### [LetsPing](https://github.com/CordiaLabs/LetsPing)
 
----
+The agent trust layer: behavioral firewall, HITL, and Cryo-Sleep state for AI agents. Framework-agnostic SDKs (Python and Node/TypeScript), adapters for LangGraph and Vercel AI SDK, MCP server, and CLI. One client connects your agent to a hosted dashboard, triage, approvals, and audit. Optional agent-first layer: verifiable credentials, signed handoffs, and usage-based billing so agents can transact without a human.
 
-[Website](https://letsping.co) • [Twitter](https://x.com/letspingai) • [Status](https://letsping.co/status)
+### [OpenClaw-Skill](https://github.com/CordiaLabs/OpenClaw-Skill)
+
+Sudo for OpenClaw. Intercepts high-risk agent actions (files, infra, payments) for human approval. Hot-patch payloads in real time via a zero-config mobile PWA.
+
+
+[Website](https://letsping.co) · [Twitter](https://x.com/letspingai) · [Status](https://letsping.co/status)
