@@ -1,7 +1,7 @@
 # Cordia Labs
 **San Francisco, CA** · [cordialabs.io](https://cordialabs.io) · [vladimir@cordialabs.io](mailto:vladimir@cordialabs.io)
 
-### A $1,000 dual-arm robot that folds laundry.
+### A $1,000 robot that folds laundry.
 
 Cloth manipulation usually fails at the point of contact. A gripper closes, the fabric slips two millimeters, and the fold comes out crooked. Vision models miss the slip because cameras can't see pressure.
 
