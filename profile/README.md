@@ -1,23 +1,41 @@
 # Cordia Labs
+**San Francisco, CA** · [cordialabs.io](https://cordialabs.io) · [vladimir@cordialabs.io](mailto:vladimir@cordialabs.io)
 
-Building infrastructure for durable, agentic workflows. 
-We focus on state and control at the boundary between autonomous execution and human oversight.
+### Building a $1,000 dual-arm robot for handling cloth.
 
-## Focus Areas
+Cloth manipulation usually fails at the point of contact. A gripper closes, the fabric slips two millimeters, and the fold comes out crooked. Vision models miss the slip because cameras can't see pressure.
 
-* **Durable wait protocols:** Primitives that let agents pause execution without holding compute or losing state.
-* **Human-in-the-loop (HITL):** Standard interfaces for manual verification and hot-patching of agent outputs.
-* **Safety infrastructure:** Tool-use authorization, behavioral guardrails, and audit trails for high-stakes agent actions.
+To capture this, the robot's jaws use thin-film force sensors streaming at 200 Hz. The contact data is hardware-synced with the camera views and joint states, and written straight to LeRobot's dataset format. When a fold fails, the slip is in the log.
 
-## Active Projects
+The hardware BOM is $1,000. Collecting usable cloth data requires putting robots in actual laundry rooms instead of a single lab, so the rig has to be cheap enough to distribute.
 
-### [LetsPing](https://github.com/CordiaLabs/LetsPing)
+V0 is built and teleoperating. I'm based in the Bay Area and looking for local commercial laundry operations to host an early pilot.
 
-The agent trust layer: behavioral firewall, HITL, and Cryo-Sleep state for AI agents. Framework-agnostic SDKs (Python and Node/TypeScript), adapters for LangGraph and Vercel AI SDK, MCP server, and CLI. One client connects your agent to a hosted dashboard, triage, approvals, and audit. Optional agent-first layer: verifiable credentials, signed handoffs, and usage-based billing so agents can transact without a human.
+---
 
-### [OpenClaw-Skill](https://github.com/CordiaLabs/OpenClaw-Skill)
+## Public Repositories
 
-Sudo for OpenClaw. Intercepts high-risk agent actions (files, infra, payments) for human approval. Hot-patch payloads in real time via a zero-config mobile PWA.
+| Repository | Description | License |
+|---|---|---|
+| [**`bom`**](https://github.com/CordiaLabs/bom) | $1,000 hardware bill of materials as a detailed CSV (vendor, part number, quantity, unit cost) | CC0-1.0 |
+| [**`tactile-firmware`**](https://github.com/CordiaLabs/tactile-firmware) | ESP32 firmware streaming thin-film FSR contact pressure at 200 Hz (<$10/hand) | Apache-2.0 |
+| [**`teleop-stack`**](https://github.com/CordiaLabs/teleop-stack) | Dual SO-101 teleoperation, cameras, and tactile data logging in LeRobot dataset format | Apache-2.0 |
+| [**`v0-cad`**](https://github.com/CordiaLabs/v0-cad) | CAD models, STEP source, and 3D printable parts for the mobile cart bench | CERN-OHL-S-2.0 |
 
+---
 
-[Website](https://letsping.co) · [Twitter](https://x.com/letspingai) · [Status](https://letsping.co/status)
+## V0 Build Specifications
+
+| Subsystem | Specification |
+|---|---|
+| **Kinematics** | Dual SO-101, Feetech STS3215 over serial bus |
+| **Vision** | Overhead 720p, cropped to roughly 78 cm at about 1.3 mm per pixel, plus two wrist views, referenced to the arm base rather than the room |
+| **Tactile** | ESP32 plus thin-film FSRs at 200 Hz, under $10 per hand |
+| **Logging** | Vision, joint state, and contact synced to one clock, written to LeRobot format |
+| **First Garments** | T-shirts, hand towels, pillowcases |
+
+---
+
+## Pilots & Inquiries
+
+If you run a drop-off laundry, a hotel laundry, or a turnover crew and want to try one, email: [vladimir@cordialabs.io](mailto:vladimir@cordialabs.io)
