@@ -2,33 +2,15 @@
 **San Francisco, CA** · [cordialabs.io](https://cordialabs.io) · [vladimir@cordialabs.io](mailto:vladimir@cordialabs.io)
 
 ### A $1,000 robot that folds laundry.
+*Target: under $1,000 in parts, excluding assembly and the development laptop and printer.*
 
 Cloth manipulation usually fails at the point of contact. A dual-arm gripper closes, the fabric slips two millimeters, and the fold comes out crooked. Vision models miss the slip because cameras can't see pressure.
 
 To capture this, the robot's jaws use thin-film force sensors streaming at 200 Hz. The contact data is hardware-synced with the camera views and joint states, and written straight to LeRobot's dataset format. When a fold fails, the slip is in the log.
 
-The target BOM is $1,000. Collecting usable cloth data requires putting robots in actual laundry rooms instead of a single lab, so the rig has to be cheap enough to distribute.
+Collecting usable cloth data requires putting robots in actual laundry rooms instead of a single lab, so the rig has to be cheap enough to distribute.
 
 V0 is built and teleoperating. I'm based in the Bay Area and looking for local commercial laundry operations to host an early pilot.
-
----
-
-## Hardware Target Breakdown (V0)
-
-The target BOM is $1,000. Below is the subsystem summary for the physical rig:
-
-| Subsystem | Scope | Subtotal (USD) |
-|---|---|---|
-| **Servos** | 12× high-speed serial bus actuators (follower joint motors) | $264 |
-| **Arms & Teleop** | Passive joint encoders & bus interface boards (leader + follower chains) | $268 |
-| **Compute & Vision** | Overhead 720p workspace camera, dual wrist cameras, powered hub interface | $100 |
-| **Frame** | Mobile utility cart base, rig mounting plates, arm brackets, camera mast | $112 |
-| **Fasteners** | Heat-set brass inserts, structural socket head screws, locknuts | $28 |
-| **Sensors** | Dual-jaw thin-film FSRs (<$10/hand), ESP32 MCU, signal conditioning | $29 |
-| **Power & Electrical** | Dual isolated 12V rails, silicone harnesses, emergency power cutoff | $20 |
-| **Baseline Target** | | **$821** |
-
-*(Leaves ~$179 headroom for sales tax, freight, and filament purge to stay under the $1,000 cap.)*
 
 ---
 
