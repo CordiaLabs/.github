@@ -19,7 +19,6 @@ V0 is built and teleoperating. I'm based in the Bay Area and looking for local c
 |---|---|---|
 | [**`tactile-firmware`**](https://github.com/CordiaLabs/tactile-firmware) | ESP32 firmware streaming thin-film FSR contact pressure at 200 Hz (<$10/hand) | Apache-2.0 |
 | [**`teleop-stack`**](https://github.com/CordiaLabs/teleop-stack) | Dual SO-101 teleoperation, cameras, and tactile data logging in LeRobot dataset format | Apache-2.0 |
-| [**`v0-cad`**](https://github.com/CordiaLabs/v0-cad) | CAD models, STEP source, and 3D printable parts for the mobile cart bench | CERN-OHL-S-2.0 |
 
 ---
 
